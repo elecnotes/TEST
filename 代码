@@ -1,0 +1,15 @@
+        10:
+            //比较压力
+            #TON1IN[0] := 1;
+            IF #TON1[0].Q THEN
+                IF #压力超过上限 THEN
+                    #自动调压步骤 := 100;
+                END_IF;
+                IF #压力在范围内 THEN
+                    #自动调压步骤 := 300;
+                END_IF;
+                IF #压力超过下限 THEN
+                    #自动调压步骤 := 200;
+                END_IF;
+                #TON1IN[0] := 0;
+            END_IF;
